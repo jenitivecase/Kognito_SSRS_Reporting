@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ODS">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=10.44.20.44\ODS</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>a363a603-5487-4095-8927-2830775cfc1d</DataSourceID>
+</RptDataSource>
