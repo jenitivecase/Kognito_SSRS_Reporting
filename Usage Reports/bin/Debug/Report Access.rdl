@@ -207,16 +207,46 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox34">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=CountRows()</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox34</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="ColumnGroup">
-                    <GroupExpressions>
-                      <GroupExpression />
-                    </GroupExpressions>
-                  </Group>
                   <TablixHeader>
                     <Size>0.25in</Size>
                     <CellContents>
@@ -252,6 +282,9 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                       </Textbox>
                     </CellContents>
                   </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixColumnHierarchy>
@@ -305,6 +338,7 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                         <GroupExpressions>
                           <GroupExpression>=Fields!Name.Value</GroupExpression>
                         </GroupExpressions>
+                        <Parent>=Fields!DisplayName.Value</Parent>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
@@ -350,6 +384,40 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>4.6875in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox33">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>Total</Value>
+                                    <Style />
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox33</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                    </TablixMember>
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
@@ -357,7 +425,7 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
             <DataSetName>reportexecutionlog</DataSetName>
             <Top>0.05556in</Top>
             <Left>0.10417in</Left>
-            <Height>0.5in</Height>
+            <Height>0.75in</Height>
             <Width>9.85417in</Width>
             <Style>
               <Border>

@@ -89,7 +89,7 @@ WHERE gm.groupid IN
                            )
           )
       AND (cs.start_date BETWEEN @startdate AND @enddate OR cs.completed_date BETWEEN @startdate AND @enddate)
-      AND (p.id = @productselection OR @productselection IS NULL)
+      AND (p.id = @productselection OR @productselection = 9999)
 ORDER BY cs.start_date
         ,cs.completed_date;</CommandText>
       </Query>
@@ -170,9 +170,10 @@ WHERE g.id IN
                            )
           )
 UNION
-SELECT NULL AS productid
+SELECT 9999 AS productid
       ,' All' AS productname
 ORDER BY p.name;</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
         <Field Name="productid">
@@ -871,11 +872,21 @@ ORDER BY p.name;</CommandText>
                 </TablixColumnHierarchy>
                 <TablixRowHierarchy>
                   <TablixMembers>
+                    <TablixMember />
                     <TablixMember>
-                      <KeepWithGroup>After</KeepWithGroup>
-                    </TablixMember>
-                    <TablixMember>
-                      <Group Name="Details" />
+                      <Group Name="pagebreakgroup">
+                        <GroupExpressions>
+                          <GroupExpression>=CEILING(RowNumber(Nothing)/Parameters!RowsPerPage.Value)</GroupExpression>
+                        </GroupExpressions>
+                        <PageBreak>
+                          <BreakLocation>Between</BreakLocation>
+                        </PageBreak>
+                      </Group>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="Details" />
+                        </TablixMember>
+                      </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                 </TablixRowHierarchy>
@@ -894,7 +905,7 @@ ORDER BY p.name;</CommandText>
             <KeepTogether>true</KeepTogether>
             <Top>0.05556in</Top>
             <Height>5.34375in</Height>
-            <Width>14in</Width>
+            <Width>14.32292in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -905,10 +916,10 @@ ORDER BY p.name;</CommandText>
         <Height>6.40625in</Height>
         <Style />
       </Body>
-      <Width>14in</Width>
+      <Width>14.32292in</Width>
       <Page>
         <PageHeader>
-          <Height>0.77083in</Height>
+          <Height>0.84027in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -927,6 +938,61 @@ ORDER BY p.name;</CommandText>
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>To download the Excel extract for this dataset:
+</Value>
+                      <Style />
+                    </TextRun>
+                    <TextRun>
+                      <Value>="https://reports.kognito.com/SSRSServer?/LMS Reports/User Starts and Completions&amp;rs:Format=EXCEL&amp;orgselection=" &amp;
+Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!productselection.Value &amp; 
+"&amp;startdate=" &amp; Parameters!startdate.Value &amp; "&amp;enddate=" &amp; Parameters!enddate.Value &amp; "&amp;RowsPerPage:isnull=true"</Value>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Hyperlink>="https://reports.kognito.com/SSRSServer?/LMS Reports/User Starts and Completions&amp;rs:Format=EXCEL&amp;orgselection=" &amp;
+Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!productselection.Value &amp; 
+"&amp;startdate=" &amp; Parameters!startdate.Value &amp; "&amp;enddate=" &amp; Parameters!enddate.Value &amp; "&amp;RowsPerPage:isnull=true"</Hyperlink>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>update 3:18pm</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>0.125in</Top>
+              <Left>3.155in</Left>
+              <Height>0.61979in</Height>
+              <Width>9.50833in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -945,6 +1011,12 @@ ORDER BY p.name;</CommandText>
   <ReportParameters>
     <ReportParameter Name="orgselection">
       <DataType>Integer</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>orginfo</DataSetName>
+          <ValueField>orgid</ValueField>
+        </DataSetReference>
+      </DefaultValue>
       <Prompt>Select an organization:</Prompt>
       <ValidValues>
         <DataSetReference>
@@ -956,11 +1028,20 @@ ORDER BY p.name;</CommandText>
     </ReportParameter>
     <ReportParameter Name="startdate">
       <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>10/16/2019 00:00:00</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>Select the beginning of the desired date range:</Prompt>
     </ReportParameter>
     <ReportParameter Name="productselection">
       <DataType>Integer</DataType>
-      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>9999</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>Select a product:</Prompt>
       <ValidValues>
         <DataSetReference>
@@ -972,7 +1053,45 @@ ORDER BY p.name;</CommandText>
     </ReportParameter>
     <ReportParameter Name="enddate">
       <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>10/16/2019 00:00:00</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>Select the end of the desired date range:</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RowsPerPage">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1000</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>RowsPerPage</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>100</Value>
+            <Label>100</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>500</Value>
+            <Label>500</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>1000</Value>
+            <Label>1000</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>5000</Value>
+            <Label>5000</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>99999999</Value>
+            <Label>99999999</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -999,6 +1118,11 @@ ORDER BY p.name;</CommandText>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>productselection</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>RowsPerPage</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
