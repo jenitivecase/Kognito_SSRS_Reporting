@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ODS">
-  <ConnectionProperties>
-    <Extension>SQL</Extension>
-    <ConnectString>Data Source=10.44.20.44\ODS;Initial Catalog=Reporting</ConnectString>
-  </ConnectionProperties>
-  <DataSourceID>4208a8c7-1f88-4d19-81c3-46689fc3d246</DataSourceID>
-</RptDataSource>
