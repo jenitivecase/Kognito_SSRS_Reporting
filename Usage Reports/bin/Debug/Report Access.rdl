@@ -220,7 +220,9 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=CountRows()</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -232,6 +234,12 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -264,7 +272,9 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Right</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -312,7 +322,9 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!DisplayName.Value</Value>
-                                <Style />
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -324,6 +336,11 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BottomBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>0.5pt</Width>
+                          </BottomBorder>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -348,7 +365,7 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>4.6875in</Size>
+                            <Size>5.05208in</Size>
                             <CellContents>
                               <Textbox Name="Name">
                                 <CanGrow>true</CanGrow>
@@ -386,7 +403,7 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                     </TablixMember>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>4.6875in</Size>
+                        <Size>5.05208in</Size>
                         <CellContents>
                           <Textbox Name="Textbox33">
                             <CanGrow>true</CanGrow>
@@ -396,10 +413,14 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                                 <TextRuns>
                                   <TextRun>
                                     <Value>Total</Value>
-                                    <Style />
+                                    <Style>
+                                      <FontWeight>Bold</FontWeight>
+                                    </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style />
+                                <Style>
+                                  <TextAlign>Left</TextAlign>
+                                </Style>
                               </Paragraph>
                             </Paragraphs>
                             <rd:DefaultName>Textbox33</rd:DefaultName>
@@ -408,6 +429,12 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
                                 <Color>LightGrey</Color>
                                 <Style>Solid</Style>
                               </Border>
+                              <BottomBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>0.5pt</Width>
+                              </BottomBorder>
+                              <BackgroundColor>WhiteSmoke</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -426,7 +453,7 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
             <Top>0.05556in</Top>
             <Left>0.10417in</Left>
             <Height>0.75in</Height>
-            <Width>9.85417in</Width>
+            <Width>10.21875in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -440,7 +467,7 @@ AND timestart BETWEEN @startdate AND @enddate</CommandText>
       <Width>11.16667in</Width>
       <Page>
         <PageHeader>
-          <Height>0.94792in</Height>
+          <Height>0.82292in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>

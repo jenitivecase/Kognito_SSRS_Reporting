@@ -7,6 +7,7 @@
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=10.44.20.44\ODS;Initial Catalog=KNET</ConnectString>
+        <Prompt>Specify a user name and password for data source ODS:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>47576bc8-851b-4c53-a084-0e024bb17217</rd:DataSourceID>
@@ -263,7 +264,7 @@ ORDER BY rs.groupid
                       <Width>0.71875in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.75in</Width>
+                      <Width>2.93489in</Width>
                     </TablixColumn>
                     <TablixColumn>
                       <Width>1.39063in</Width>
@@ -292,10 +293,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -326,6 +330,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -360,6 +365,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -394,6 +400,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -428,6 +435,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -469,7 +477,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>organization_id</rd:DefaultName>
@@ -565,7 +575,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>organization_created_date</rd:DefaultName>
@@ -651,7 +663,7 @@ ORDER BY rs.groupid
                 <Top>0.15694in</Top>
                 <Left>0.10292in</Left>
                 <Height>0.52084in</Height>
-                <Width>11.1172in</Width>
+                <Width>11.30209in</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -662,19 +674,19 @@ ORDER BY rs.groupid
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>0.71875in</Width>
+                      <Width>0.90365in</Width>
                     </TablixColumn>
                     <TablixColumn>
                       <Width>3.95573in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.72135in</Width>
+                      <Width>0.88802in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.76823in</Width>
+                      <Width>0.95573in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>3.97917in</Width>
+                      <Width>3.625in</Width>
                     </TablixColumn>
                     <TablixColumn>
                       <Width>0.97396in</Width>
@@ -697,10 +709,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox10</rd:DefaultName>
@@ -731,6 +746,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -765,10 +781,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -799,10 +818,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox18</rd:DefaultName>
@@ -833,6 +855,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -867,10 +890,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox20</rd:DefaultName>
@@ -908,7 +934,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>orgroleid</rd:DefaultName>
@@ -972,7 +1000,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>course_id</rd:DefaultName>
@@ -1004,7 +1034,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>group_id</rd:DefaultName>
@@ -1068,7 +1100,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>product_id</rd:DefaultName>
@@ -1114,7 +1148,7 @@ ORDER BY rs.groupid
                 <Top>0.86333in</Top>
                 <Left>0.10292in</Left>
                 <Height>0.5in</Height>
-                <Width>11.11719in</Width>
+                <Width>11.30209in</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1126,16 +1160,16 @@ ORDER BY rs.groupid
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>0.71094in</Width>
+                      <Width>1.13802in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>7.35938in</Width>
+                      <Width>7.3776in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.74219in</Width>
+                      <Width>1.03386in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.30469in</Width>
+                      <Width>1.75261in</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -1155,10 +1189,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox22</rd:DefaultName>
@@ -1189,6 +1226,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -1223,10 +1261,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox26</rd:DefaultName>
@@ -1257,10 +1298,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -1298,7 +1342,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>demo_field_id</rd:DefaultName>
@@ -1362,7 +1408,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>demo_question_required</rd:DefaultName>
@@ -1394,7 +1442,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>demo_question_type</rd:DefaultName>
@@ -1437,7 +1487,7 @@ ORDER BY rs.groupid
                 <Top>1.58in</Top>
                 <Left>0.10292in</Left>
                 <Height>0.47916in</Height>
-                <Width>11.1172in</Width>
+                <Width>11.30209in</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
@@ -1472,10 +1522,13 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox32</rd:DefaultName>
@@ -1506,6 +1559,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -1547,7 +1601,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>admin_id</rd:DefaultName>
@@ -1632,10 +1688,10 @@ ORDER BY rs.groupid
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>0.71875in</Width>
+                      <Width>0.90365in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.79167in</Width>
+                      <Width>0.88542in</Width>
                     </TablixColumn>
                     <TablixColumn>
                       <Width>5.4375in</Width>
@@ -1654,14 +1710,17 @@ ORDER BY rs.groupid
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>GroupID</Value>
+                                      <Value>Group ID</Value>
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox38</rd:DefaultName>
@@ -1688,14 +1747,17 @@ ORDER BY rs.groupid
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>CourseID</Value>
+                                      <Value>Course ID</Value>
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox40</rd:DefaultName>
@@ -1726,6 +1788,7 @@ ORDER BY rs.groupid
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -1767,7 +1830,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>groupid</rd:DefaultName>
@@ -1799,7 +1864,9 @@ ORDER BY rs.groupid
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>courseid</rd:DefaultName>
@@ -1873,7 +1940,7 @@ ORDER BY rs.groupid
                 <Top>2.97792in</Top>
                 <Left>0.10292in</Left>
                 <Height>0.5in</Height>
-                <Width>6.94792in</Width>
+                <Width>7.22657in</Width>
                 <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
@@ -1898,7 +1965,7 @@ ORDER BY rs.groupid
       <Width>21.87375in</Width>
       <Page>
         <PageHeader>
-          <Height>0.81125in</Height>
+          <Height>0.68625in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1912,7 +1979,7 @@ ORDER BY rs.groupid
                       <Value>Organization Setup Information</Value>
                       <Style>
                         <FontFamily>Arial</FontFamily>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>22pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1923,12 +1990,13 @@ ORDER BY rs.groupid
               <rd:DefaultName>Textbox9</rd:DefaultName>
               <Top>0.16542in</Top>
               <Left>2.92583in</Left>
-              <Height>0.34375in</Height>
+              <Height>0.47917in</Height>
               <Width>5.42708in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
