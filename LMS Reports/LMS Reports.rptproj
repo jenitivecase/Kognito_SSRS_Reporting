@@ -55,7 +55,6 @@
     <Report Include="Organization Information.rdl" />
     <Report Include="Parent Group Information.rdl" />
     <Report Include="User Starts and Completions.rdl" />
-    <Report Include="User Starts and Completions_server.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
