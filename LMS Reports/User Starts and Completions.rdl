@@ -9,7 +9,7 @@
         <ConnectString>Data Source=10.44.20.44\ODS;Initial Catalog=KNET</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>718c78ec-a345-4f89-bcb6-b4d77dc216ad</rd:DataSourceID>
+      <rd:DataSourceID>7693a246-6898-4700-96a1-515e27019773</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -36,6 +36,9 @@ ORDER BY o.orgname</CommandText>
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
+          <QueryParameter Name="@TopN">
+            <Value>=Parameters!TopN.Value</Value>
+          </QueryParameter>
           <QueryParameter Name="@orgselection">
             <Value>=Parameters!orgselection.Value</Value>
           </QueryParameter>
@@ -49,7 +52,7 @@ ORDER BY o.orgname</CommandText>
             <Value>=Parameters!productselection.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT DISTINCT
+        <CommandText>SELECT DISTINCT TOP (@TopN) 
        g.name group_name
       ,p.name product_name
       ,c.title course_name
@@ -193,35 +196,35 @@ ORDER BY p.name;</CommandText>
         <ReportItems>
           <Rectangle Name="Rectangle1">
             <ReportItems>
-              <Tablix Name="Tablix2">
+              <Tablix Name="Tablix5">
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>2.25126in</Width>
+                      <Width>2.48353in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.84375in</Width>
+                      <Width>2.78949in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.05208in</Width>
+                      <Width>2.65408in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.55208in</Width>
+                      <Width>1.02908in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.91666in</Width>
+                      <Width>1.46176in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.01042in</Width>
+                      <Width>1.54991in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.97917in</Width>
+                      <Width>2.50824in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.22917in</Width>
+                      <Width>1.69574in</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.27083in</Width>
+                      <Width>1.63324in</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -230,8 +233,12 @@ ORDER BY p.name;</CommandText>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox14">
+                            <Textbox Name="Textbox33">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!group_name.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -265,8 +272,12 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox10">
+                            <Textbox Name="Textbox22">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!product_name.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -274,6 +285,7 @@ ORDER BY p.name;</CommandText>
                                     <TextRun>
                                       <Value>Product Name</Value>
                                       <Style>
+                                        <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
                                         <Color>White</Color>
                                       </Style>
@@ -299,8 +311,12 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox16">
+                            <Textbox Name="Textbox26">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!course_name.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -334,14 +350,18 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox18">
+                            <Textbox Name="Textbox29">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!userid.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>UserID</Value>
+                                      <Value>User ID</Value>
                                       <Style>
                                         <FontFamily>Arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
@@ -349,7 +369,9 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox18</rd:DefaultName>
@@ -369,8 +391,12 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox2">
+                            <Textbox Name="Textbox8">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!firstname.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -404,8 +430,12 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox1">
+                            <Textbox Name="Textbox9">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!lastname.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -439,8 +469,12 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox3">
+                            <Textbox Name="Textbox30">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!email.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -474,8 +508,12 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox4">
+                            <Textbox Name="Textbox31">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!start_date.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -489,7 +527,9 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Right</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox4</rd:DefaultName>
@@ -509,8 +549,12 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox26">
+                            <Textbox Name="Textbox32">
                               <CanGrow>true</CanGrow>
+                              <UserSort>
+                                <SortExpression>=Fields!completed_date.Value</SortExpression>
+                                <SortTarget>session_info</SortTarget>
+                              </UserSort>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -524,7 +568,9 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Right</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox26</rd:DefaultName>
@@ -549,7 +595,7 @@ ORDER BY p.name;</CommandText>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="group_name">
+                            <Textbox Name="group_name1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -563,12 +609,10 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>group_name</rd:DefaultName>
+                              <rd:DefaultName>group_name1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -584,7 +628,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="product_name">
+                            <Textbox Name="product_name1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -598,12 +642,10 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>product_name</rd:DefaultName>
+                              <rd:DefaultName>product_name1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -619,7 +661,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="course_name">
+                            <Textbox Name="course_name1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -633,12 +675,10 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>course_name</rd:DefaultName>
+                              <rd:DefaultName>course_name1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -654,7 +694,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="userid">
+                            <Textbox Name="userid1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -673,7 +713,7 @@ ORDER BY p.name;</CommandText>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>userid</rd:DefaultName>
+                              <rd:DefaultName>userid1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -689,7 +729,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="firstname">
+                            <Textbox Name="firstname1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -703,12 +743,10 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>firstname</rd:DefaultName>
+                              <rd:DefaultName>firstname1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -724,7 +762,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="lastname">
+                            <Textbox Name="lastname1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -738,12 +776,10 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>lastname</rd:DefaultName>
+                              <rd:DefaultName>lastname1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -759,7 +795,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="email">
+                            <Textbox Name="email1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -773,12 +809,10 @@ ORDER BY p.name;</CommandText>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style>
-                                    <TextAlign>Left</TextAlign>
-                                  </Style>
+                                  <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>email</rd:DefaultName>
+                              <rd:DefaultName>email1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -794,7 +828,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="start_date">
+                            <Textbox Name="start_date1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -809,11 +843,11 @@ ORDER BY p.name;</CommandText>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
-                                    <TextAlign>Left</TextAlign>
+                                    <TextAlign>Right</TextAlign>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>start_date</rd:DefaultName>
+                              <rd:DefaultName>start_date1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -829,7 +863,7 @@ ORDER BY p.name;</CommandText>
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="completed_date">
+                            <Textbox Name="completed_date1">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -844,11 +878,11 @@ ORDER BY p.name;</CommandText>
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
-                                    <TextAlign>Left</TextAlign>
+                                    <TextAlign>Right</TextAlign>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>completed_date</rd:DefaultName>
+                              <rd:DefaultName>completed_date1</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Color>LightGrey</Color>
@@ -881,31 +915,20 @@ ORDER BY p.name;</CommandText>
                 </TablixColumnHierarchy>
                 <TablixRowHierarchy>
                   <TablixMembers>
-                    <TablixMember />
                     <TablixMember>
-                      <Group Name="pagebreakgroup">
-                        <GroupExpressions>
-                          <GroupExpression>=CEILING(RowNumber(Nothing)/Parameters!RowsPerPage.Value)</GroupExpression>
-                        </GroupExpressions>
-                        <PageBreak>
-                          <BreakLocation>Between</BreakLocation>
-                        </PageBreak>
-                      </Group>
-                      <TablixMembers>
-                        <TablixMember>
-                          <Group Name="Details" />
-                        </TablixMember>
-                      </TablixMembers>
+                      <KeepWithGroup>After</KeepWithGroup>
+                      <RepeatOnNewPage>true</RepeatOnNewPage>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="Details1" />
                     </TablixMember>
                   </TablixMembers>
                 </TablixRowHierarchy>
                 <RepeatColumnHeaders>true</RepeatColumnHeaders>
                 <RepeatRowHeaders>true</RepeatRowHeaders>
                 <DataSetName>session_info</DataSetName>
-                <Top>0.12375in</Top>
-                <Left>0.2175in</Left>
                 <Height>0.5in</Height>
-                <Width>13.10542in</Width>
+                <Width>17.80508in</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -913,10 +936,10 @@ ORDER BY p.name;</CommandText>
                 </Style>
               </Tablix>
             </ReportItems>
-            <KeepTogether>true</KeepTogether>
-            <Top>0.05556in</Top>
-            <Height>5.34375in</Height>
-            <Width>14.32292in</Width>
+            <Top>0.13976in</Top>
+            <Left>0.21748in</Left>
+            <Height>0.5in</Height>
+            <Width>17.80508in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -924,13 +947,13 @@ ORDER BY p.name;</CommandText>
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>6.40625in</Height>
+        <Height>0.97917in</Height>
         <Style />
       </Body>
-      <Width>14.32292in</Width>
+      <Width>18.28298in</Width>
       <Page>
         <PageHeader>
-          <Height>0.905in</Height>
+          <Height>0.89062in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -949,36 +972,6 @@ ORDER BY p.name;</CommandText>
                 </Border>
               </Style>
             </Image>
-            <Textbox Name="Textbox5">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>To download the Excel extract for this dataset: </Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.36458in</Top>
-              <Left>2.72184in</Left>
-              <Height>0.26562in</Height>
-              <Width>9.50833in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Image Name="Export">
               <Source>Embedded</Source>
               <Value>excel_icon</Value>
@@ -988,16 +981,16 @@ ORDER BY p.name;</CommandText>
                   <Action>
                     <Hyperlink>="https://reports.kognito.com/SSRSServer?/LMS Reports/User Starts and Completions&amp;rs:Format=EXCELOPENXML&amp;orgselection=" &amp;
 Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!productselection.Value &amp; 
-"&amp;startdate=" &amp; Parameters!startdate.Value &amp; "&amp;enddate=" &amp; Parameters!enddate.Value &amp; "&amp;RowsPerPage=99999999"</Hyperlink>
+"&amp;startdate=" &amp; Parameters!startdate.Value &amp; "&amp;enddate=" &amp; Parameters!enddate.Value &amp; "&amp;TopN=99999999"</Hyperlink>
                   </Action>
                 </Actions>
               </ActionInfo>
               <Top>0.26562in</Top>
-              <Left>5.61459in</Left>
+              <Left>17.52256in</Left>
               <Height>0.5in</Height>
               <Width>0.5in</Width>
-              <ZIndex>2</ZIndex>
-              <ToolTip>Full export</ToolTip>
+              <ZIndex>1</ZIndex>
+              <ToolTip>Download full dataset as Excel</ToolTip>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1071,14 +1064,14 @@ Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!pr
       </DefaultValue>
       <Prompt>Select the end of the desired date range:</Prompt>
     </ReportParameter>
-    <ReportParameter Name="RowsPerPage">
+    <ReportParameter Name="TopN">
       <DataType>Integer</DataType>
       <DefaultValue>
         <Values>
-          <Value>1000</Value>
+          <Value>100</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Rows Per Page:</Prompt>
+      <Prompt>Number of Records:</Prompt>
       <ValidValues>
         <ParameterValues>
           <ParameterValue>
@@ -1133,7 +1126,7 @@ Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!pr
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>RowsPerPage</ParameterName>
+          <ParameterName>TopN</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
