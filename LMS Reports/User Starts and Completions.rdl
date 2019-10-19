@@ -36,9 +36,6 @@ ORDER BY o.orgname</CommandText>
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@TopN">
-            <Value>=Parameters!TopN.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@orgselection">
             <Value>=Parameters!orgselection.Value</Value>
           </QueryParameter>
@@ -52,7 +49,7 @@ ORDER BY o.orgname</CommandText>
             <Value>=Parameters!productselection.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT DISTINCT TOP (@TopN) 
+        <CommandText>SELECT DISTINCT 
        g.name group_name
       ,p.name product_name
       ,c.title course_name
@@ -928,7 +925,7 @@ ORDER BY p.name;</CommandText>
                 <RepeatRowHeaders>true</RepeatRowHeaders>
                 <DataSetName>session_info</DataSetName>
                 <Height>0.5in</Height>
-                <Width>17.80508in</Width>
+                <Width>17.80507in</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -966,31 +963,6 @@ ORDER BY p.name;</CommandText>
               <Height>0.47917in</Height>
               <Width>2.4349in</Width>
               <ToolTip>Kognito</ToolTip>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
-            <Image Name="Export">
-              <Source>Embedded</Source>
-              <Value>excel_icon</Value>
-              <Sizing>FitProportional</Sizing>
-              <ActionInfo>
-                <Actions>
-                  <Action>
-                    <Hyperlink>="https://reports.kognito.com/SSRSServer?/LMS Reports/User Starts and Completions&amp;rs:Format=EXCELOPENXML&amp;orgselection=" &amp;
-Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!productselection.Value &amp; 
-"&amp;startdate=" &amp; Parameters!startdate.Value &amp; "&amp;enddate=" &amp; Parameters!enddate.Value &amp; "&amp;TopN=99999999"</Hyperlink>
-                  </Action>
-                </Actions>
-              </ActionInfo>
-              <Top>0.26562in</Top>
-              <Left>17.52256in</Left>
-              <Height>0.5in</Height>
-              <Width>0.5in</Width>
-              <ZIndex>1</ZIndex>
-              <ToolTip>Download full dataset as Excel</ToolTip>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1057,50 +1029,12 @@ Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!pr
     </ReportParameter>
     <ReportParameter Name="enddate">
       <DataType>DateTime</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>10/16/2019 00:00:00</Value>
-        </Values>
-      </DefaultValue>
       <Prompt>Select the end of the desired date range:</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="TopN">
-      <DataType>Integer</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>100</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Number of Records:</Prompt>
-      <ValidValues>
-        <ParameterValues>
-          <ParameterValue>
-            <Value>99999999</Value>
-            <Label>All</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>100</Value>
-            <Label>100</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>500</Value>
-            <Label>500</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>1000</Value>
-            <Label>1000</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>5000</Value>
-            <Label>5000</Label>
-          </ParameterValue>
-        </ParameterValues>
-      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfColumns>3</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
@@ -1122,11 +1056,6 @@ Parameters!orgselection.Value &amp; "&amp;productselection=" &amp; Parameters!pr
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>productselection</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>TopN</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
