@@ -52,6 +52,7 @@
     <DataSource Include="ODS.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Annual Usage.rdl" />
     <Report Include="Organization Information.rdl" />
     <Report Include="Parent Group Information.rdl" />
     <Report Include="User Starts and Completions.rdl" />

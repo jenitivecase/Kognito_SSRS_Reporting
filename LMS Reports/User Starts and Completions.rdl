@@ -274,6 +274,7 @@ ORDER BY p.name;</CommandText>
                                     <TextRun>
                                       <Value>Product Name</Value>
                                       <Style>
+                                        <FontFamily>arial</FontFamily>
                                         <FontWeight>Bold</FontWeight>
                                         <Color>White</Color>
                                       </Style>
@@ -295,6 +296,7 @@ ORDER BY p.name;</CommandText>
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
+                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                         <TablixCell>
