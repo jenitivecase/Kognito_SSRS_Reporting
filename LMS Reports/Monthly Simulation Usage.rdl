@@ -588,17 +588,7 @@ order by parent_name, child_name, course, yr_mo</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>The counts in this report represent the number of course launches and completions by distinct users in a given month. 
-</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>The dataset for this report extends back to 01-01-2018. For older usage data, please contact your friendly neighborhood report creator.</Value>
+                      <Value>The counts in this report represent the number of course launches and completions by distinct users in a given month. </Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
