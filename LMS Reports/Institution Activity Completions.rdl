@@ -101,35 +101,14 @@ ORDER BY orgname
             <Value>=Parameters!orgid.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT child.id childid
-,child.name childname
-      ,ca.activity_id
-	  ,ca.activity_name
-	  ,COUNT(DISTINCT cs.userid) activations
-      ,COUNT(DISTINCT uas_completed.userid) starts
-      ,COUNT(DISTINCT uas_launched.userid) completions
-FROM Reporting.[cs].[vw_Lookup_OrgsParents] op
-    JOIN
-        (SELECT * FROM KNET.knet.kognito_groups WHERE parentid &lt;&gt; 0) child ON child.parentid = op.parentid
-    LEFT JOIN KNET.knet.kognito_groups_members gm ON gm.groupid = child.id
-    LEFT JOIN KNET.knet.course_activities ca ON ca.courseid = child.courseid
-    LEFT JOIN KNET.knet.user_activity_status uas_completed ON uas_completed.userid = gm.userid
-                                                              AND uas_completed.groupid = gm.groupid
-                                                              AND ca.activity_id = uas_completed.activity_id
-                                                              AND uas_completed.completed_date IS NOT NULL
-    LEFT JOIN KNET.knet.user_activity_status uas_launched ON uas_launched.userid = gm.userid
-                                                             AND uas_launched.groupid = gm.groupid
-                                                             AND ca.activity_id = uas_launched.activity_id
-                                                             AND uas_launched.started_date IS NOT NULL
-															 
-        LEFT JOIN KNET.knet.kognito_course_status cs ON (cs.userid = gm.userid AND cs.courseid = child.courseid AND cs.groupid = gm.groupid)
-WHERE op.orgid = @orgid
-GROUP BY child.id
-,child.name
-      ,ca.activity_id
-	  ,ca.activity_name</CommandText>
+        <CommandText>select * from reporting.[dbo].[KNET_ChildActivityUsage]
+WHERE orgid = @orgid</CommandText>
       </Query>
       <Fields>
+        <Field Name="orgid">
+          <DataField>orgid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="childid">
           <DataField>childid</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -138,8 +117,8 @@ GROUP BY child.id
           <DataField>childname</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="activity_id">
-          <DataField>activity_id</DataField>
+        <Field Name="activityid">
+          <DataField>activityid</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="activity_name">
@@ -157,6 +136,10 @@ GROUP BY child.id
         <Field Name="completions">
           <DataField>completions</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TableUpdated">
+          <DataField>TableUpdated</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -645,7 +628,7 @@ GROUP BY child.id
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>The counts in this report represent the number of activity launches and completions by institution for distinct users in a given month. </Value>
+                      <Value>The counts in this report represent the number of course activations as well as activity starts and completions by institution. </Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
