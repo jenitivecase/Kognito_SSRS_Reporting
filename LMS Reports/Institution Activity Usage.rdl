@@ -470,6 +470,7 @@ WHERE orgid = @orgid</CommandText>
                               <TextRun>
                                 <Value>=Fields!activity_name.Value</Value>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
