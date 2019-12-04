@@ -105,7 +105,8 @@ ORDER BY orgname
           </QueryParameter>
         </QueryParameters>
         <CommandText>select * from Reporting.[dbo].[KNET_ChildActivityUsage]
-WHERE orgid = @orgid and courseid = @courseid</CommandText>
+WHERE orgid = @orgid and courseid = @courseid
+order by activityid</CommandText>
       </Query>
       <Fields>
         <Field Name="orgid">
@@ -257,13 +258,13 @@ order by coursename</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.80208in</Width>
+                  <Width>0.82292in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.80208in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.89584in</Width>
+                  <Width>0.94792in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -523,7 +524,7 @@ order by coursename</CommandText>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!activity_name.Value</Value>
+                      <Value>=Fields!activityid.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
@@ -745,7 +746,7 @@ order by coursename</CommandText>
             <Top>0.14458in</Top>
             <Left>0.10292in</Left>
             <Height>0.75in</Height>
-            <Width>7.28125in</Width>
+            <Width>7.35417in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
