@@ -100,14 +100,25 @@ ORDER BY orgname
           <QueryParameter Name="@orgid">
             <Value>=Parameters!orgid.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@courseid">
+            <Value>=Parameters!courseid.Value</Value>
+          </QueryParameter>
         </QueryParameters>
-        <CommandText>select * from reporting.[dbo].[KNET_ChildActivityUsage]
-WHERE orgid = @orgid</CommandText>
+        <CommandText>select * from Reporting.[dbo].[KNET_ChildActivityUsage]
+WHERE orgid = @orgid and courseid = @courseid</CommandText>
       </Query>
       <Fields>
         <Field Name="orgid">
           <DataField>orgid</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="courseid">
+          <DataField>courseid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="coursename">
+          <DataField>coursename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="childid">
           <DataField>childid</DataField>
@@ -143,6 +154,28 @@ WHERE orgid = @orgid</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="course_lookup">
+      <Query>
+        <DataSourceName>ODS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@orgid">
+            <Value>=Parameters!orgid.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct courseid, coursename from Reporting.[cs].[vw_Lookup_OrgsParents] where orgid = @orgid
+order by coursename</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="courseid">
+          <DataField>courseid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="coursename">
+          <DataField>coursename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -161,8 +194,9 @@ WHERE orgid = @orgid</CommandText>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Institutions</Value>
+                                <Value>Institution</Value>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -184,19 +218,52 @@ WHERE orgid = @orgid</CommandText>
                       </Textbox>
                     </CellContents>
                   </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox6">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Course</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox6</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
                 </TablixCornerRow>
               </TablixCornerRows>
             </TablixCorner>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.80208in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.95833in</Width>
+                  <Width>0.80208in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.94792in</Width>
+                  <Width>0.89584in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -205,7 +272,7 @@ WHERE orgid = @orgid</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox47">
+                        <Textbox Name="Textbox11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -215,13 +282,14 @@ WHERE orgid = @orgid</CommandText>
                                   <Value />
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox47</rd:DefaultName>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -415,14 +483,14 @@ WHERE orgid = @orgid</CommandText>
                   <TablixHeader>
                     <Size>0.25in</Size>
                     <CellContents>
-                      <Textbox Name="Textbox19">
+                      <Textbox Name="Textbox47">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Course Activations</Value>
+                                <Value>Activations</Value>
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -432,7 +500,7 @@ WHERE orgid = @orgid</CommandText>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox19</rd:DefaultName>
+                        <rd:DefaultName>Textbox47</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
@@ -535,6 +603,47 @@ WHERE orgid = @orgid</CommandText>
                       </Textbox>
                     </CellContents>
                   </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>2in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox9">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value />
+                                    <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontWeight>Bold</FontWeight>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox9</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
@@ -559,7 +668,9 @@ WHERE orgid = @orgid</CommandText>
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!childname.Value</Value>
-                                <Style />
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -580,7 +691,52 @@ WHERE orgid = @orgid</CommandText>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
-                    <TablixMember />
+                    <TablixMember>
+                      <Group Name="coursename">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!coursename.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!coursename.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>2in</Size>
+                        <CellContents>
+                          <Textbox Name="coursename">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!coursename.Value</Value>
+                                    <Style />
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>coursename</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
@@ -589,7 +745,7 @@ WHERE orgid = @orgid</CommandText>
             <Top>0.14458in</Top>
             <Left>0.10292in</Left>
             <Height>0.75in</Height>
-            <Width>5.6875in</Width>
+            <Width>7.28125in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -679,6 +835,17 @@ WHERE orgid = @orgid</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="courseid">
+      <DataType>String</DataType>
+      <Prompt>Please select the course:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>course_lookup</DataSetName>
+          <ValueField>courseid</ValueField>
+          <LabelField>coursename</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -689,6 +856,11 @@ WHERE orgid = @orgid</CommandText>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>orgid</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>courseid</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
