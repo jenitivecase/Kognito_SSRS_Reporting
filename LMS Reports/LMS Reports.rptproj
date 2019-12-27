@@ -54,6 +54,7 @@
   <ItemGroup>
     <Report Include="Annual Usage.rdl" />
     <Report Include="Institution Activity Usage.rdl" />
+    <Report Include="Institution Demographic Responses.rdl" />
     <Report Include="Monthly Simulation Usage.rdl" />
     <Report Include="Organization Cover Sheet.rdl" />
     <Report Include="Organization Information.rdl" />
