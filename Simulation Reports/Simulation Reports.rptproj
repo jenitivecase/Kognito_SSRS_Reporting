@@ -49,8 +49,11 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSource Include="ODS.rds" />
+  </ItemGroup>
+  <ItemGroup>
     <Report Include="At Risk K12 Simulation Counts by Location.rdl" />
-    <Report Include="Monthly Usage by Group.rdl" />
+    <Report Include="KNET User xAPI Activity.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
